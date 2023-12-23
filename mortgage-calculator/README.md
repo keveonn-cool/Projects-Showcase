@@ -2,7 +2,7 @@
 
 ## React Mortgage Calculator Tutorial for Beginners
 
-![Thumbnail](path/to/thumbnail/image.png)
+![Thumbnail](src/outputScreenShot.png)
 
 ### Table of Contents
 
