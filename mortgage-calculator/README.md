@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Projects Showcase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Mortgage Calculator Tutorial for Beginners
 
-## Available Scripts
+![Thumbnail](path/to/thumbnail/image.png)
 
-In the project directory, you can run:
+### Table of Contents
 
-### `npm start`
+1. [Setup](#setup)
+2. [Material UI Theme](#material-ui-theme)
+3. [Folder Structure](#folder-structure)
+4. [Navbar](#navbar)
+5. [MUI Grid System](#mui-grid-system)
+6. [Slider Component](#slider-component)
+7. [About](#about)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To set up the project, follow these steps:
 
-### `npm test`
+1. Create a folder named `mortgage-calculator`.
+2. Open the terminal and run the following commands:
+   ```bash
+   npx create-react-app .
+   npm install @mui/material @emotion/react @emotion/styled
+   npm install --save chart.js react-chartjs-2
+   Material UI Theme
+   We are using the dark theme of Material UI. Create a file named theme.js in the src folder and add the following code:
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+javascript
+Copy code
+import { createTheme } from "@mui/material/styles";
 
-### `npm run build`
+export const theme = createTheme({
+palette: {
+mode: "dark",
+},
+});
+In the index.js file, import the theme and wrap the app with the ThemeProvider.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+javascript
+Copy code
+// index.js
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { theme } from "./theme";
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<React.StrictMode>
+<ThemeProvider theme={theme}>
+<App />
+<CssBaseline />
+</ThemeProvider>
+</React.StrictMode>
+Navbar
+Next, we will be creating a very simple Navbar to show the Logo. For that, create a file named Navbar.js in the src/Components folder and add the following code:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+javascript
+Copy code
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { Container } from "@mui/system";
 
-### `npm run eject`
+const Navbar = () => {
+return (
+<AppBar position="static">
+<Container maxWidth='xl'>
+<Toolbar>
+<Typography variant="h5">
+Bank of React
+</Typography>
+</Toolbar>
+</Container>
+</AppBar>
+);
+};
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export default Navbar;
+MUI Grid System
+The MUI Grid System allows for a flexible and responsive layout. Create a file named GridSystem.js in the src/Components folder and add the following code:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+javascript
+Copy code
+import React from "react";
+import { Grid } from "@mui/material";
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+const GridSystem = () => {
+return (
+<Grid container spacing={3}>
+{/_ Add your grid items here _/}
+</Grid>
+);
+};
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default GridSystem;
+Slider Component
+Next, we will create a slider component to get input from the user. It will look like this:
 
-## Learn More
+For that, create a file named SliderComponent.js in the src/Components/Common folder. Define the necessary props for the reusable slider component:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+onChange
+label
+min
+max
+defaultValue
+unit
+value
+steps
+amount
+...
