@@ -51,8 +51,8 @@ The final combined dataset has ten columns and 36,923 rows.
 
 ## Execution Screenshot
 
-![Execution Screenshot](/Program_Output_Screenshot.jpg)
-![Graph Screenshot](/my_figure.png)
+![Execution Screenshot](Program_Output_Screenshot.jpg)
+![Graph Screenshot](my_figure.png)
 
 ## Function Descriptions
 
